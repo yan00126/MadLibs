@@ -19,7 +19,7 @@ public class NotEqualAttribute : ValidationAttribute
         }
 
         var otherPropertyValue = otherPropertyInfo.GetValue(validationContext.ObjectInstance);
-        if (Equals(value, otherPropertyValue))
+        if (Equals(value, otherPropertyValue) || value == otherPropertyValue)
         {
             if (ErrorMessage != null)
             {
