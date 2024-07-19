@@ -1,0 +1,26 @@
+﻿@rendermode InteractiveServer
+
+<dialog open="@IsOpen" class="backdrop">
+  <div class="p-5 bg-white border border-1 rounded w-50 m-auto">
+    <div class="p-3 fs-4 text-center">
+      @ChildContent
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-secondary" @onclick="CloseCallback">Close</button>
+    </div>
+  </div>
+</dialog>
+
+
+
+@code {
+  [Parameter]
+  public RenderFragment? ChildContent { get; set; }
+
+  [Parameter]
+  public bool IsOpen { get; set; } = false;
+
+  [Parameter]
+  public EventCallback CloseCallback { get; set; }
+}
