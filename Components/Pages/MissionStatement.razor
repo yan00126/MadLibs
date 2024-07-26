@@ -4,7 +4,7 @@
 
 <MadLibTitle>Mission Statement</MadLibTitle>
 
-<form class="bg-light border border-1 p-5 mb-5">
+<EditForm class="bg-light border border-1 p-5 mb-5" Model="Words">
   <div class="form-group mb-3">
     <label for="Verb1" class="form-label">Verb 1</label>
     <input class="form-control" id="Verb1"  />
@@ -36,8 +36,26 @@
   </div>
   
   <button class="btn btn-primary">Read Story</button>
-</form>
+</EditForm>
 
 @code {
+  private class WordsModal {
+    public string? Verb1 {get; set;}
+
+    public string? Verb2 {get; set;}
+
+    public string? Adjective {get; set;}
+
+    public string? PluralNoun1 {get; set;}
+
+    public string? PluralNoun2 {get; set;}
+
+    public string? PluralNoun3 {get; set;}
+
+
+  }
+
+  [SupplyParameterFromForm]
+  private WordsModal Words {get;set;} = new();
 
 }
